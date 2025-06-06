@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Germany Sans";
+  src: url("../fonts/germany_sans/Germany Sans Demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-font/AvenirLTStd-Roman.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-font/AvenirLTStd-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-font/AvenirLTStd-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-font/AvenirLTStd-Heavy.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-font/AvenirLTStd-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Germany Sans", sans-serif;
+}
+
+body,
+p,
+span,
+a,
+div,
+button,
+input,
+textarea {
+  font-family: "Avenir", sans-serif;
+}

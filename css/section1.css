@@ -1,0 +1,139 @@
+#section-1 {
+  height: 100vh;
+  padding: 0px;
+  background-image: url(../assets/section-1-bg.svg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  background-color: #34323298;
+  position: relative;
+  overflow: hidden;
+}
+
+#white-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#bottle-container {
+  position: relative;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  height: 500px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+
+
+}
+
+#section-1-title {
+  position: absolute;
+  margin-top: 100px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  scale: 0;
+  width: 90%;
+  text-wrap: nowrap;
+  z-index: 105;
+  /* border: 1px solid red; */
+}
+
+#section-1-button {
+  position: absolute;
+  text-decoration: underline;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  text-underline-offset: 0.25rem;
+  z-index: 105;
+  opacity: 0;
+  scale: 0;
+}
+
+#section-1-title-1 {
+  position: absolute;
+  top:-40%;
+  font-size: 4.375rem;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+  opacity: 0;
+  transform: translateX(-100%);
+  width: 90%;
+}
+
+#section-1-title-2 {
+  position: absolute;
+  top:-25%;
+  font-size: 4.375rem;
+  font-weight: 400;
+  color: #000;
+ text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  text-wrap: nowrap;
+  transform: translateX(100%);
+  width: 90%;
+}
+
+#bottle-without-cap {
+  position: absolute;
+  z-index: 100;
+  width: auto;
+  max-width: 50%;
+  /* max-width: 100%; */
+  /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 768px) {
+  #section-1-title {
+    font-size: 1.125rem;
+    text-wrap: balance;
+  }
+
+  #section-1-title-1,
+  #section-1-title-2 {
+    font-size: 2rem;
+    text-wrap: balance;
+  }
+
+  #section-1-title-1 {
+    top: 25%;
+  }
+
+  #section-1-title-2 {
+    top: 36%;
+  }
+
+  #bottle-cap {
+    max-width: 40%;
+    /* max-width: 45%; */
+    transform-origin: bottom center;
+  }
+
+  #bottle-without-cap {
+    max-width: 40%;
+    left: 10%;
+    /* max-width: 100%; */
+  }
+}
