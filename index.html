@@ -9,51 +9,87 @@
   </head>
 
   <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-links-left">
+          <a href="#">Shop All</a>
+          <a href="#">About Us</a>
+          <a href="#">Perfumes</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="navbar-logo">
+          <img src="assets/Cadini Logo white.svg" alt="Logo" />
+        </div>
+      </div>
+    </header>
+
     <!-- Section 1 -->
     <div id="section-1">
+      <main>
+        <div class="hero">
+          <img class="hero-text" src="assets/logo-text white.svg" alt="" />
+        </div>
+      </main>
+
+      <!-- Scroll Button -->
+        <div class="scroll-container">
+          <div class="scroll-down">
+            <svg class="scroll-icon" xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 128 128" fill="none">
+              <path d="M64 0C28.653 0 0 28.653 0 64C0 99.347 28.653 128 64 128C99.347 128 128 99.347 128 64C128 28.653 99.347 0 64 0Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+
+
       <div id="white-overlay"></div>
       <div id="bottle-container">
-        <!-- <img src="./assets/bottle-cap.svg" alt="bottle cap" id="bottle-cap" /> -->
+       
+  <h1 id="section-1-title-1">
+    <span class="dark">Evenly Balanced <span class="light"> Notes,</span> </span>
+  </h1>
+  <h1 id="section-1-title-2">
+    <span class="light"> Exotic <span class="dark"> Essence</span></span>
+  </h1>
+  <h1 id="section-1-title-3">
+     <span class="dark">In Every Scent</span>
+  </h1>
+   <img src="./assets/icon.svg" alt="bottle without cap" id="bottle-without-cap" />
 
-        <!-- <h2 id="section-1-title">Experience Italian essence in every scent.</h2> -->
 
-        <!-- <a href="#" id="section-1-button">Discover Now</a> -->
-
-        <h1 id="section-1-title-1">Evenly balanced Notes,</h1>
-        <h1 id="section-1-title-2">
-          exotic essence <br />
-          in every scent
-        </h1>
-
-        <img
-          src="./assets//icon.svg"
-          alt="bottle without cap"
-          id="bottle-without-cap"
-        />
-      </div>
     </div>
 
-    <!-- Section 2 -->
-    <div style="height: 100vh; background-color: #fff"></div>
+    <!-- ✅ Fixed: Section 2 with ID -->
+    <div class="section-2" id="secondsection">
+      <!-- <h2>You're now in Section 2!</h2> -->
+    </div>
 
-    <!-- JavaScript Files -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-
     <script src="./js/lenis.js"></script>
 
-    <!-- Smooth scroll for anchor links -->
+    <!-- ✅ Smooth Scroll Script -->
     <script>
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
         });
       });
-    </script>
+
+     
+  // Scroll to second section on button click
+  document.getElementById(".scroll-down").addEventListener("click", () => {
+    document.querySelector("#white-overlay").scrollIntoView({ behavior: "smooth" });
+  });
+
+
+    </script> 
 
     <script src="./js/section1-animation.js"></script>
   </body>

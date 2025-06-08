@@ -4,6 +4,15 @@ function isMobile() {
   return window.matchMedia("(max-width: 768px)").matches;
 }
 
+// Smooth Scroll to Second Section
+document.querySelector('.scroll-container').addEventListener('click', () => {
+  document.querySelector('.white-overlay').scrollIntoView({
+    behavior: 'smooth'
+  }); 
+});
+
+
+
 function positionBottleCapOnBottle() {
   const bottleWithoutCap = document.getElementById("bottle-without-cap");
   const bottleCap = document.getElementById("bottle-cap");
@@ -234,3 +243,63 @@ tl1.to(
   },
   "tl1.2"
 );
+
+tl1.to(
+  "#section-1-title-3",
+  {
+    opacity: 1,
+    translateX: "0%",
+    duration: 0.7,
+  },
+  "tl1.2"
+);
+
+
+// navbar animation
+// ✅ Initial state setup
+gsap.set(".navbar-logo", { scale: 0, opacity: 0 });
+gsap.set(".navbar", { y: -100, opacity: 0 });
+gsap.set(".hero-text", { scale: 1, y: 0, opacity: 1 });
+
+// 🎯 ScrollTrigger-based animation
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+})
+.to(".hero-text", {
+  scale: 0.4,     // Shrink down more before fade
+  y: -200,        // Move upward smoothly
+  ease: "power2.out"
+})
+.to(".hero-text", {
+  opacity: 0,     // Now fade after scale/move
+  y: -250,        // Slight extra movement up
+  ease: "power2.out"
+});
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top+=500 top",
+    end: "top+=700 top",
+    scrub: true
+  }
+})
+.to(".navbar", {
+  y: 0,
+  opacity: 1,
+  ease: "power2.out"
+})
+.to(".navbar-logo", {
+  scale: 1,
+  opacity: 1,
+   ease: "power2.out" 
+}, "<"); // Sync logo animation with navbar
+
+
+
+ 

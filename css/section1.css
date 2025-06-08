@@ -1,5 +1,192 @@
-#section-1 {
+/* html, body {
+  height: 100%;
+  overflow-x: hidden;
+} */
+
+#next-section-btn {
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #3b1c1b;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 105;
+  position: relative;
+}
+
+#next-section-btn:hover {
+  background-color: #5b2c2b;
+  transform: scale(1.05);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 1;
+  padding: 10px 40px;
+  opacity: 0;
+   transform: translateY(-100%);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+}
+
+.navbar-links-left {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  left: 0;
+}
+
+.navbar-links-left a {
+  color: gray;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar-links-left a:hover {
+  color: #000;
+}
+
+
+/* Center Logo */
+.navbar-logo img {
+  height: 60px;
+  transform-origin:center;
+}
+
+
+
+/* Optional Responsive */
+@media (max-width: 768px) {
+  .navbar-links-left,
+  .navbar-icons-right {
+    display: none; 
+  }
+
+  .navbar-logo img {
+    height: 50px;
+  }
+}
+
+
+/* Hero Section */
+.hero {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;       
+}
+
+.hero-text {
+  width: 100%;
+  /* max-width: 1200px; */
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-top:-160px;
+  text-align: center;
+  line-height: 1; /* Keeps text tight */
+   z-index: 1; /* 👇 Goes behind navbar when navbar appears */
+  transition: transform 0.4s ease;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+.scroll-down{
+  height: 50px;
+  width: 30px;
+  border: 2px solid white;
+  position: absolute;
+  left: 96%;
+  top: calc(70% + 100px);
+  z-index:100;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 1s ease;
+  
+}
+
+
+.scroll-icon {
+  transform: translate(-80%, -100%) rotate(45deg);
+  position: absolute;
+  left: 50%;
+  transition: all 0.8s ease;
+  transform: translateX(-50%);
+  width: 5px;
+  height:5px;
+  animation: scroll-down 1.8s ease-in-out infinite;
+}
+.scroll-text {
+  margin-top: -10px;
+  color: rgb(152, 9, 9);
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+}
+/* Animation - starts from top */
+@keyframes scroll-down {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 200%;
+    opacity: 0;
+  }
+}
+
+/* ✅ Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .scroll-down {
+    width: 24px;
+    height: 40px;
+    left: 90%;
+    bottom: 20px;
+    border-width: 1.5px;
+  }
+
+  .scroll-icon {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+
+#section-1 {
+  min-height: 100vh;
+  height: auto;
   padding: 0px;
   background-image: url(../assets/section-1-bg.svg);
   background-size: cover;
@@ -12,29 +199,35 @@
 
 #white-overlay {
   position: absolute;
-  bottom: -100%;
+  /* bottom: -100%; */
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: #fff;
+  height: 100vh;
+  background-image: url(../assets/2\ section\ background.svg);
+    background-repeat: no-repeat;        /* ✅ prevents repeating */
+  background-position: center center;  /* ✅ centers it */
+  background-size: auto 120%; 
   z-index: 2;
   pointer-events: none;
 }
 
 #bottle-container {
   position: relative;
-  width: 500px;
+  /* width: 500px; */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
   height: 500px;
   position: absolute;
-  top: 30%;
-  left: 30%;
-
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
 
 }
+
+
 
 #section-1-title {
   position: absolute;
@@ -51,22 +244,12 @@
   /* border: 1px solid red; */
 }
 
-#section-1-button {
-  position: absolute;
-  text-decoration: underline;
-  font-size: 1rem;
-  text-align: center;
-  color: #fff;
-  font-weight: 100;
-  text-underline-offset: 0.25rem;
-  z-index: 105;
-  opacity: 0;
-  scale: 0;
-}
+
 
 #section-1-title-1 {
   position: absolute;
-  top:-40%;
+  /* top:-40%; */
+   top:-25%;
   font-size: 4.375rem;
   font-weight: 400;
   color: #000;
@@ -82,7 +265,8 @@
 
 #section-1-title-2 {
   position: absolute;
-  top:-25%;
+  /* top:-25%; */
+   top:-10%;
   font-size: 4.375rem;
   font-weight: 400;
   color: #000;
@@ -94,6 +278,35 @@
   text-wrap: nowrap;
   transform: translateX(100%);
   width: 90%;
+   white-space: normal;   
+}
+
+#section-1-title-3{
+  position: absolute;
+  /* top:-10%; */
+  top:3%;
+  font-size: 4.375rem;
+  font-weight: 400;
+  color: #000;
+ text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  text-wrap: nowrap;
+  transform: translateX(100%);
+  width: 90%;
+   white-space: normal;   
+}
+
+
+.dark {
+  color: #3b1c1b; /* Deep brown (you can adjust) */
+}
+
+.light {
+  color: #c1c1c1; /* Light grey as in the screenshot */
+  font-weight: 400;
 }
 
 #bottle-without-cap {
@@ -106,34 +319,76 @@
 }
 
 @media screen and (max-width: 768px) {
-  #section-1-title {
-    font-size: 1.125rem;
-    text-wrap: balance;
+#section-1 {
+ min-height: 100vh;
+  height: auto;
+}
+  #next-section-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-radius: 24px;
+    margin-top: 20px;
   }
 
-  #section-1-title-1,
-  #section-1-title-2 {
+  /* ✅ Navbar spacing fix on small screens */
+  .navbar {
+    padding: 8px 20px;
+  }
+
+  .hero-text{
+
+  width: 90%;
+  margin-top: -50%;
+  }
+
+  /* ✅ Scroll text smaller on mobile */
+  .scroll-text {
+    font-size: 14px;
+  }
+
+  /* ✅ Adjust bottle container position */
+  #bottle-container {
+    /* top: 75%; */
+    height: 300px;
+    width: 100%;
+  }
+
+  /* ✅ Smaller overlay image */
+  #white-overlay {
+    background-size: auto 100%;
+  }
+
+  /* ✅ Titles position fix */
+
+  #section-1-title-1{
+    top: -60%;
     font-size: 2rem;
-    text-wrap: balance;
+  }
+    #section-1-title-2{
+    top: -48%;
+    font-size: 2rem;
+  }
+    #section-1-title-3{
+    top: -37%;
+    font-size: 2rem;
+  }
+  /* ✅ Ensure title font is readable */
+  #section-1-title,
+  #section-1-title-1,
+  #section-1-title-2,
+  #section-1-title-3 {
+    /* top: -55%; */
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    white-space: normal;
   }
 
-  #section-1-title-1 {
-    top: 25%;
-  }
-
-  #section-1-title-2 {
-    top: 36%;
-  }
-
-  #bottle-cap {
-    max-width: 40%;
-    /* max-width: 45%; */
-    transform-origin: bottom center;
-  }
-
-  #bottle-without-cap {
-    max-width: 40%;
-    left: 10%;
-    /* max-width: 100%; */
+  /* ✅ Improve scroll icon positioning */
+  .scroll-down {
+    left: 85%;
+    top: unset;
+    bottom: 40px;
   }
 }
+
