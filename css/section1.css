@@ -1,7 +1,15 @@
-/* html, body {
-  height: 100%;
-  overflow-x: hidden;
-} */
+/* Add this to your CSS */
+.hero-text,
+.navbar,
+.navbar-logo,
+#section-1-title,
+#section-1-title-1,
+#section-1-title-2,
+#section-1-title-3,
+#bottle-without-cap {
+  will-change: transform, opacity;
+}
+
 
 #next-section-btn {
   margin-top: 40px;
@@ -209,6 +217,7 @@
   background-size: auto 120%; 
   z-index: 2;
   pointer-events: none;
+  
 }
 
 #bottle-container {
@@ -387,7 +396,7 @@
   /* ✅ Improve scroll icon positioning */
   .scroll-down {
     left: 85%;
-    top: unset;
+    top: 70%;
     bottom: 40px;
   }
 }
