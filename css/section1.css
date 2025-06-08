@@ -1,4 +1,4 @@
-/* Add this to your CSS */
+
 .hero-text,
 .navbar,
 .navbar-logo,
@@ -216,8 +216,8 @@
   background-position: center center;  /* ✅ centers it */
   background-size: auto 120%; 
   z-index: 2;
-  pointer-events: none;
-  
+  pointer-events: none; 
+   padding-bottom: 150px;
 }
 
 #bottle-container {

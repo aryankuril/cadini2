@@ -5,11 +5,11 @@ function isMobile() {
 }
 
 // Smooth Scroll to Second Section
-document.querySelector('.scroll-container').addEventListener('click', () => {
-  document.querySelector('.white-overlay').scrollIntoView({
-    behavior: 'smooth'
-  }); 
-});
+// document.querySelector('.scroll-container').addEventListener('click', () => {
+//   document.querySelector('.white-overlay').scrollIntoView({
+//     behavior: 'smooth'
+//   }); 
+// });
 
 
 
